@@ -2,13 +2,13 @@ FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
 WORKDIR /app
 
 # copy csproj and restore as distinct layers
-COPY TestDocker/*.csproj ./TestDocker/
+COPY src/*.csproj ./TestDocker/
 WORKDIR /app/TestDocker
 RUN dotnet restore
 
 # copy and publish app and libraries
 WORKDIR /app/
-COPY TestDocker/. ./TestDocker/
+COPY src/. ./TestDocker/
 WORKDIR /app/TestDocker
 RUN dotnet publish -c Release -o out
 
