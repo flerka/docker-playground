@@ -1,1 +1,1 @@
-Test project to play with docker and related tools.
+Test project to play with docker and related tools. Added docker compose to the project.
